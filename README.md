@@ -8,7 +8,7 @@ Run `npm i` for install dependencies.
 
 Run `npm start` for a dev server.
 
-Navigate to `http://localhost:4200/`.
+Navigate to `http://localhost:4200/`
 
 ## Code scaffolding
 
