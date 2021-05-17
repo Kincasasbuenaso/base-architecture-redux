@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
+//MODULES
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './screens/home/home.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 //REDUX
 import { StoreModule } from '@ngrx/store';
@@ -13,6 +13,11 @@ import { environment } from 'src/environments/environment';
 import { appReducers } from './store/app.reducers';
 import { EffectsArray } from './store/effects/index';
 
+//COMPONENTS
+import { AppComponent } from './app.component';
+import { HomeComponent } from './screens/home/home.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +26,7 @@ import { EffectsArray } from './store/effects/index';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot( appReducers ),
     EffectsModule.forRoot( EffectsArray ),
     StoreDevtoolsModule.instrument({

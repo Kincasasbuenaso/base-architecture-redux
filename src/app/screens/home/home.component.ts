@@ -10,9 +10,16 @@ import { AppState } from 'src/app/store/app.reducers';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private store: Store<AppState>) { }
+  users = [];
+
+  constructor(private store: Store<AppState>) {  }
 
   ngOnInit(): void {
+
+    this.store.select('users').subscribe( ({ users }) => {
+      this.users = users;
+    });
+
     this.store.dispatch( loadUsers() );
   }
 
